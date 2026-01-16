@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Binaural Beats Generator & Player</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Binaural Beats Generator & Player</h1>
+      <p class="subtitle">Faza 1 MVP: presety, odtwarzacz stereo, eksport WAV.</p>
+    </header>
+
+    <section class="panel">
+      <h2>Presety stanu</h2>
+      <div class="field">
+        <label for="preset">Wybierz cel sesji</label>
+        <select id="preset"></select>
+      </div>
+      <div class="preset-details" id="presetDetails"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Parametry generatora</h2>
+      <div class="grid">
+        <div class="field">
+          <label for="baseFrequency">Częstotliwość bazowa (Hz)</label>
+          <input type="number" id="baseFrequency" min="50" max="500" step="1" value="200" />
+        </div>
+        <div class="field">
+          <label for="beatFrequency">Różnica między kanałami (Hz)</label>
+          <input type="number" id="beatFrequency" min="0.5" max="40" step="0.5" value="6" />
+        </div>
+        <div class="field">
+          <label for="duration">Długość sesji (minuty)</label>
+          <input type="number" id="duration" min="1" max="120" step="1" value="20" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="volume">Głośność</label>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="0.4" />
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Odtwarzacz stereo</h2>
+      <div class="player-controls">
+        <button id="play" class="btn btn-primary">▶️ Odtwarzaj</button>
+        <button id="pause" class="btn btn-ghost" disabled>⏸️ Pauza</button>
+        <button id="stop" class="btn btn-ghost" disabled>⏹️ Stop</button>
+      </div>
+      <div class="player-status">
+        <span id="status">Gotowy do odtwarzania</span>
+      </div>
+      <div class="headphone-test">
+        <p>Test słuchawek:</p>
+        <button id="testLeft" class="btn btn-ghost">🔈 Lewy kanał</button>
+        <button id="testRight" class="btn btn-ghost">🔈 Prawy kanał</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Eksport sesji</h2>
+      <p>Eksportuje aktualne ustawienia do pliku WAV (16-bit, 44.1 kHz, stereo).</p>
+      <button id="export" class="btn btn-primary">⬇️ Eksportuj WAV</button>
+      <span id="exportStatus" class="status"></span>
+    </section>
+
+    <section class="panel roadmap">
+      <h2>Roadmap (kolejne fazy)</h2>
+      <ul>
+        <li>Personalizacja presetów, ambient, dziennik sesji.</li>
+        <li>Tryby prowadzone z głosem i planer praktyki.</li>
+        <li>Integracja EEG i marketplace presetów.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
