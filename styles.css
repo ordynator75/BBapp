@@ -1,0 +1,128 @@
+:root {
+  color-scheme: light;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: #f5f7fb;
+  color: #1d2333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px 48px;
+}
+
+.app {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: #475168;
+}
+
+.panel {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 24px rgba(29, 35, 51, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panel h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+input,
+select,
+button {
+  font-size: 1rem;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #c9d2e2;
+}
+
+button {
+  background: #1c5ef2;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(28, 94, 242, 0.3);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.player-controls,
+.headphone-test {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.player-status {
+  font-weight: 600;
+  color: #26304a;
+}
+
+.status {
+  font-size: 0.95rem;
+  color: #475168;
+}
+
+.preset-details {
+  background: #f1f4fa;
+  padding: 12px;
+  border-radius: 12px;
+  color: #2a334d;
+}
+
+.roadmap ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 20px 12px 32px;
+  }
+}
